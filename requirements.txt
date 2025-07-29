@@ -2,6 +2,7 @@
 
 pytest
 build
+twine
 
 matplotlib
 numpy
