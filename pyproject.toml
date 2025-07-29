@@ -1,0 +1,54 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "adcutils"
+dynamic = ["version"]
+description = "Utility package for ADC measurements and signal analysis"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [
+  { name = "James Mackey", email = "jamackey.pc@gmail.com" }
+]
+keywords = ["adc", "signal processing", "measurements", "frequency", "sampling"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent"
+]
+dependencies = [
+  "numpy>=1.21"
+]
+
+[project.urls]
+Homepage = "https://github.com/jamackey/adcutils"
+Repository = "https://github.com/jamackey/adcutils"
+
+[tool.hatch.build]
+sources = ["src"]
+
+[tool.hatch.version]
+path = "src/adcutils/__version__.py"
+
+[tool.hatch.envs.default]
+dependencies = [
+  "pytest",
+  "coverage"
+]
+
+[tool.hatch.envs.docs]
+dependencies = [
+  "mkdocs",
+  "mkdocs-material",
+  "mkdocstrings[python]",
+  "pymdown-extensions"
+]
+
+[tool.hatch.envs.lint]
+dependencies = [
+  "ruff",
+  "black",
+  "mypy"
+]

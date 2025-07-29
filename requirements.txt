@@ -1,0 +1,7 @@
+-e .
+
+pytest
+build
+
+matplotlib
+numpy
